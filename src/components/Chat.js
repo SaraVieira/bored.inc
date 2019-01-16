@@ -22,14 +22,14 @@ const ButtonsContainer = styled.div`
 const BotSpeaking = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
 `
 
 const UserSpeaking = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   width: 100%;
 `
 
