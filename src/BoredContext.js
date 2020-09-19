@@ -4,13 +4,18 @@ import data from './data/activities'
 export const BoredContext = React.createContext()
 
 export const BoredState = ({ children }) => {
-  const [activities, links] = useState(Object.keys(data), Object.values(data))
-  const random = a => a[Math.floor(Math.random() * a.length)]
+  const activities = Object.keys(data)
+  const links = Object.values(data)
+  const getRandomIndex = a => Math.floor(Math.random() * a.length)
 
-  const getRandom = () => random(activities)
+  // const [index] = useState(getRandomIndex(activities))
+  const [index] = useState(0)
+
+  const getActivity = () => activities[index]
+  const getLink = () => links[index]
 
   return (
-    <BoredContext.Provider value={{ activities, links, getRandom }}>
+    <BoredContext.Provider value={{ getActivity, getLink }}>
       {children}
     </BoredContext.Provider>
   )
