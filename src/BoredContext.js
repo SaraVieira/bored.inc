@@ -8,8 +8,7 @@ export const BoredState = ({ children }) => {
   const links = Object.values(data)
   const getRandomIndex = a => Math.floor(Math.random() * a.length)
 
-  // const [index] = useState(getRandomIndex(activities))
-  const [index] = useState(0)
+  const [index] = useState(getRandomIndex(activities))
 
   const getActivity = () => activities[index]
   const getLink = () => links[index]
